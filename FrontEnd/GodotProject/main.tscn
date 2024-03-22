@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://gd2jxvl7ocpw"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Room1" type="Node2D" parent="."]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_right = 1199.0
+offset_bottom = 252.0
+bbcode_enabled = true
+text = "[font_size=50][center]!join to join the grey box shinichisaiko [first member] ipwinghei ciphersigint opiatrove aterstones gatreh perred eroaxee cobaltsterling rasati perred aterstones vabenil veridianthegrey gatreh FunZone513 opiatrove notveridianthegrey"
