@@ -14,4 +14,11 @@ TBD
 Game is run in [godot](godotengine.org)
 
 ### Links
-[twitch](twitch.tv/skyegreytv)
+- [twitch](twitch.tv/skyegreytv)
+
+### TODO
+- [ ] Write how to contribute
+- [ ] Write Project structure
+- [ ] Define Godot version to use
+- [ ] Think on versioning scheme
+
