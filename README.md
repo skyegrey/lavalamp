@@ -24,7 +24,7 @@ Project is divided into 2 main parts:
 ### Frontend
 **TBD**
 
-Game is run in [godot](https://godotengine.org)
+Game is run in [Godot](https://godotengine.org) 4.2.x
 
 *Write here how frontend is gonna be structured*
 
@@ -37,8 +37,12 @@ Game is run in [godot](https://godotengine.org)
 - [Discord](https://discord.gg/WkgdyS2)
 
 ### TODO
-- [ ] Write how to contribute
-- [ ] Write Project structure
-- [ ] Define Godot version to use
+- [ ] Frontend ***[WIP]***
+    - [ ] Godot ***[WIP by skyegrey]***
+- [ ] Backend ***[WIP]***
+    - [ ] Twitch bot
+- [ ] Write how to contribute ***[WIP]***
+- [ ] Write Project structure ***[WIP]***
+- [x] ~~Define Godot version to use~~ **Godot 4.2.x**
 - [ ] Think on versioning scheme
-- [ ] Write simple git tutorial
+- [ ] Write simple git tutorial ***[WIP]***
