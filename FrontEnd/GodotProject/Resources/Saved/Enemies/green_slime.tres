@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="EnemyCharacterResource" load_steps=5 format=3 uid="uid://bqgja2rw08o3n"]
+
+[ext_resource type="Script" path="res://Resources/Classes/EnemyCharacterResource.gd" id="1_ynlhg"]
+[ext_resource type="Script" path="res://Resources/Classes/CharacterStats.gd" id="2_2mgie"]
+[ext_resource type="SpriteFrames" uid="uid://s72qrt2k4db4" path="res://Resources/Saved/Enemies/EnemyAnimatedSprites/green_slime.tres" id="2_b0hxm"]
+
+[sub_resource type="Resource" id="Resource_ymn26"]
+script = ExtResource("2_2mgie")
+level = 1
+power = 10
+wisdom = 10
+dexterity = 10
+defense = 10
+
+[resource]
+script = ExtResource("1_ynlhg")
+name = "GreenSlime"
+display_name = "Green Slime"
+sprite_frames = ExtResource("2_b0hxm")
+stats = SubResource("Resource_ymn26")
+sprite_bounding_box = Rect2i(8, -3, 16, 13)

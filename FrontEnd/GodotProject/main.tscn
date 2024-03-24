@@ -1,11 +1,54 @@
-[gd_scene format=3 uid="uid://gd2jxvl7ocpw"]
+[gd_scene load_steps=7 format=3 uid="uid://gd2jxvl7ocpw"]
+
+[ext_resource type="Texture2D" uid="uid://deu33m76eacn4" path="res://Assets/Backgrounds/ForestBackground.jpg" id="1_ibbxi"]
+[ext_resource type="Script" path="res://Scripts/RoomsManager.gd" id="1_oclf0"]
+[ext_resource type="Script" path="res://Scripts/Room.gd" id="2_50vxi"]
+[ext_resource type="Script" path="res://Scripts/PlayerCharacterManager.gd" id="2_hsx2l"]
+[ext_resource type="Resource" uid="uid://bqgja2rw08o3n" path="res://Resources/Saved/Enemies/green_slime.tres" id="3_8cdr5"]
+[ext_resource type="Script" path="res://Scripts/EnemyCharacterManager.gd" id="5_rqxuw"]
 
 [node name="Main" type="Node2D"]
 
-[node name="Room1" type="Node2D" parent="."]
+[node name="RoomsManager" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1200.0
+offset_bottom = 250.0
+script = ExtResource("1_oclf0")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-offset_right = 1199.0
-offset_bottom = 252.0
-bbcode_enabled = true
-text = "[font_size=50][center]!join to join the grey box shinichisaiko [first member] ipwinghei ciphersigint opiatrove aterstones gatreh perred eroaxee cobaltsterling rasati perred aterstones vabenil veridianthegrey gatreh FunZone513 opiatrove notveridianthegrey"
+[node name="Forest" type="Node2D" parent="RoomsManager"]
+script = ExtResource("2_50vxi")
+enemy_list = Array[Resource("res://Resources/Classes/EnemyCharacterResource.gd")]([ExtResource("3_8cdr5")])
+
+[node name="CharactersMarker" type="Marker2D" parent="RoomsManager/Forest"]
+position = Vector2(90, 200)
+gizmo_extents = 217.2
+
+[node name="EnemyMarker" type="Marker2D" parent="RoomsManager/Forest"]
+position = Vector2(310, 150)
+
+[node name="Control" type="Control" parent="RoomsManager/Forest"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 400.0
+offset_bottom = 250.0
+metadata/_edit_lock_ = true
+
+[node name="TextureRect" type="TextureRect" parent="RoomsManager/Forest/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ibbxi")
+expand_mode = 3
+stretch_mode = 4
+metadata/_edit_lock_ = true
+
+[node name="EnemyCharacterManager" type="Node" parent="RoomsManager/Forest"]
+script = ExtResource("5_rqxuw")
+
+[node name="PlayerCharacterManager" type="Node" parent="."]
+script = ExtResource("2_hsx2l")

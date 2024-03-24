@@ -20,11 +20,21 @@ config/icon="res://icon.svg"
 window/size/viewport_width=1200
 window/size/viewport_height=250
 
+[file_customization]
+
+folder_colors={
+"res://Assets/": "red",
+"res://Resources/": "orange",
+"res://Scenes/": "yellow",
+"res://Scripts/": "green"
+}
+
 [gui]
 
 theme/custom_font="res://Assets/Fonts/ThaleahFat.ttf"
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=3
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
