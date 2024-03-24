@@ -46,3 +46,6 @@ Game is run in [Godot](https://godotengine.org) 4.2.x
 - [x] ~~Define Godot version to use~~ **Godot 4.2.x**
 - [ ] Think on versioning scheme
 - [ ] Write simple git tutorial ***[WIP]***
+
+### Attributions
+TEMP Healthbar: https://adwitr.itch.io/pixel-health-bar-asset-pack-2
