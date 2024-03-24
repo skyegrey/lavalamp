@@ -1,66 +1,66 @@
-[gd_scene load_steps=21 format=3 uid="uid://3h61s35mb4bn"]
+[gd_scene load_steps=24 format=3 uid="uid://ce1fmnpjjdrif"]
 
-[ext_resource type="Script" path="res://Scripts/PlayerCharacter.gd" id="1_ues4k"]
-[ext_resource type="Texture2D" uid="uid://bhkiiunxgy7mw" path="res://Assets/CharacterSprites/base_class_sprite_sheet.png" id="2_ekolp"]
-[ext_resource type="Texture2D" uid="uid://dgboraj1x0s4q" path="res://Assets/UI/rpg (1).png" id="3_xiiwe"]
+[ext_resource type="Script" path="res://2.5D/Scripts/PlayerCharacter25D.gd" id="1_eure7"]
+[ext_resource type="Texture2D" uid="uid://dgboraj1x0s4q" path="res://Assets/UI/rpg (1).png" id="2_2bihk"]
+[ext_resource type="Texture2D" uid="uid://bhkiiunxgy7mw" path="res://Assets/CharacterSprites/base_class_sprite_sheet.png" id="3_h7iu6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bx0dd"]
-atlas = ExtResource("2_ekolp")
+atlas = ExtResource("3_h7iu6")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s644s"]
-atlas = ExtResource("2_ekolp")
+atlas = ExtResource("3_h7iu6")
 region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qxgi1"]
-atlas = ExtResource("2_ekolp")
+atlas = ExtResource("3_h7iu6")
 region = Rect2(192, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j5r2g"]
-atlas = ExtResource("2_ekolp")
+atlas = ExtResource("3_h7iu6")
 region = Rect2(288, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qnyib"]
-atlas = ExtResource("2_ekolp")
+atlas = ExtResource("3_h7iu6")
 region = Rect2(384, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u48wy"]
-atlas = ExtResource("2_ekolp")
+atlas = ExtResource("3_h7iu6")
 region = Rect2(480, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i1jff"]
-atlas = ExtResource("2_ekolp")
+atlas = ExtResource("3_h7iu6")
 region = Rect2(576, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ak33f"]
-atlas = ExtResource("2_ekolp")
+atlas = ExtResource("3_h7iu6")
 region = Rect2(672, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_46bsp"]
-atlas = ExtResource("2_ekolp")
+atlas = ExtResource("3_h7iu6")
 region = Rect2(768, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_46xok"]
-atlas = ExtResource("2_ekolp")
+atlas = ExtResource("3_h7iu6")
 region = Rect2(864, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_baeak"]
-atlas = ExtResource("2_ekolp")
+atlas = ExtResource("3_h7iu6")
 region = Rect2(960, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ol4lf"]
-atlas = ExtResource("2_ekolp")
+atlas = ExtResource("3_h7iu6")
 region = Rect2(1056, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q7a56"]
-atlas = ExtResource("2_ekolp")
+atlas = ExtResource("3_h7iu6")
 region = Rect2(1152, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6fr8y"]
-atlas = ExtResource("2_ekolp")
+atlas = ExtResource("3_h7iu6")
 region = Rect2(1248, 0, 32, 32)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_vbyay"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_0a17i"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -110,36 +110,71 @@ animations = [{
 "speed": 11.0
 }]
 
+[sub_resource type="QuadMesh" id="QuadMesh_vlkww"]
+size = Vector2(1, 0.5)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_tp2x3"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hd510"]
+resource_local_to_scene = true
+transparency = 1
+albedo_texture = SubResource("ViewportTexture_tp2x3")
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_1hwjn"]
-atlas = ExtResource("3_xiiwe")
+atlas = ExtResource("2_2bihk")
 region = Rect2(33, 51, 80, 9)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i5g06"]
-atlas = ExtResource("3_xiiwe")
+atlas = ExtResource("2_2bihk")
 region = Rect2(41, 37, 65, 9)
 
-[node name="PlayerCharacter" type="Node2D"]
-script = ExtResource("1_ues4k")
+[node name="PlayerCharacter" type="Node3D"]
+script = ExtResource("1_eure7")
 
-[node name="Name" type="RichTextLabel" parent="."]
-offset_left = -50.0
-offset_top = -45.0
-offset_right = 50.0
-offset_bottom = -30.0
-bbcode_enabled = true
-text = "[center]perred"
-
-[node name="Sprite" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_vbyay")
+[node name="Sprite" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.137694, 0)
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_0a17i")
 animation = &"idle"
 autoplay = "idle"
+frame_progress = 0.714145
 
-[node name="HPBar" type="TextureProgressBar" parent="."]
-offset_left = -40.0
-offset_top = -33.0
-offset_right = 40.0
-offset_bottom = -24.0
+[node name="Billboard" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+mesh = SubResource("QuadMesh_vlkww")
+surface_material_override/0 = SubResource("StandardMaterial3D_hd510")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+transparent_bg = true
+size = Vector2i(512, 256)
+size_2d_override = Vector2i(0, 512)
+
+[node name="HPBar" type="TextureProgressBar" parent="SubViewport"]
+texture_filter = 1
+offset_left = 16.0
+offset_top = 128.0
+offset_right = 96.0
+offset_bottom = 137.0
+scale = Vector2(6, 6)
 value = 50.0
 texture_under = SubResource("AtlasTexture_1hwjn")
 texture_progress = SubResource("AtlasTexture_i5g06")
 texture_progress_offset = Vector2(8, 0)
+
+[node name="Name" type="RichTextLabel" parent="SubViewport"]
+texture_filter = 1
+offset_top = 64.0
+offset_right = 128.0
+offset_bottom = 96.0
+scale = Vector2(4, 4)
+bbcode_enabled = true
+text = "[center]perred"
+
+[node name="Panel" type="Panel" parent="SubViewport/Name"]
+modulate = Color(0.364706, 0.364706, 0.364706, 1)
+show_behind_parent = true
+layout_mode = 0
+offset_left = 32.0
+offset_right = 96.0
+offset_bottom = 16.0

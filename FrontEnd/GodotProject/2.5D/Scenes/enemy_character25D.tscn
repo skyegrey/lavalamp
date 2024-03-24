@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://dc33t7uiipkke"]
+
+[ext_resource type="Script" path="res://2.5D/Scripts/EnemyCharacter25D.gd" id="1_s3fwo"]
+[ext_resource type="Texture2D" uid="uid://dgboraj1x0s4q" path="res://Assets/UI/rpg (1).png" id="3_t48d3"]
+[ext_resource type="SpriteFrames" uid="uid://s72qrt2k4db4" path="res://Resources/Saved/Enemies/EnemyAnimatedSprites/green_slime.tres" id="4_uw5ux"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cbtb3"]
+atlas = ExtResource("3_t48d3")
+region = Rect2(33, 51, 80, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hg8m4"]
+atlas = ExtResource("3_t48d3")
+region = Rect2(41, 37, 65, 9)
+
+[node name="EnemyCharacter" type="Node3D"]
+script = ExtResource("1_s3fwo")
+
+[node name="Name" type="RichTextLabel" parent="."]
+offset_left = -100.0
+offset_top = -44.0
+offset_right = 100.0
+offset_bottom = -22.0
+bbcode_enabled = true
+text = "[center][font_size=30]EroAxee"
+scroll_active = false
+autowrap_mode = 0
+
+[node name="HPBar" type="TextureProgressBar" parent="."]
+offset_left = -80.0
+offset_top = -18.0
+offset_bottom = -9.0
+scale = Vector2(2, 2)
+value = 50.0
+texture_under = SubResource("AtlasTexture_cbtb3")
+texture_progress = SubResource("AtlasTexture_hg8m4")
+texture_progress_offset = Vector2(8, 0)
+
+[node name="Sprite" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0.701046, 0)
+texture_filter = 0
+sprite_frames = ExtResource("4_uw5ux")
