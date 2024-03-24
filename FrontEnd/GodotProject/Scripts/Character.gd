@@ -28,7 +28,7 @@ func _process(delta):
 
 ## Sets the stats of the character
 func set_stats(stats: CharacterStats):
-	character_stats = stats.duplicate()
+	character_stats = stats.duplicate() as CharacterStats
 	character_stats.max_hp = 10 + 5 * character_stats.level
 
 ## Sets the character display name
