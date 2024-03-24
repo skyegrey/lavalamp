@@ -1,0 +1,125 @@
+[gd_scene load_steps=15 format=3 uid="uid://bsjia1o4gdb8o"]
+
+[ext_resource type="Script" path="res://2.5D/Scripts/RoomsManager25D.gd" id="1_k1gpb"]
+[ext_resource type="Script" path="res://2.5D/Scripts/Room25D.gd" id="2_rltx2"]
+[ext_resource type="Resource" uid="uid://bqgja2rw08o3n" path="res://Resources/Saved/Enemies/green_slime.tres" id="3_20eaq"]
+[ext_resource type="Texture2D" uid="uid://deu33m76eacn4" path="res://Assets/Backgrounds/ForestBackground.jpg" id="4_sf2ru"]
+[ext_resource type="ArrayMesh" uid="uid://bm0j4bfyhdqnc" path="res://Assets/Backgrounds/Forest/ForestPath.obj" id="5_kvmal"]
+[ext_resource type="Script" path="res://2.5D/Scripts/EnemyCharacterManager25D.gd" id="5_p8as4"]
+[ext_resource type="Script" path="res://2.5D/Scripts/PlayerCharacterManager25D.gd" id="6_bcidc"]
+[ext_resource type="Script" path="res://2.5D/Scripts/CameraMovement.gd" id="7_gilvl"]
+[ext_resource type="ArrayMesh" uid="uid://bryxq5m24fsox" path="res://Assets/Backgrounds/Forest/Tree1.obj" id="7_iydtp"]
+[ext_resource type="Material" uid="uid://drnoxi461eefp" path="res://Assets/Backgrounds/Forest/TreeMaterial.tres" id="8_t8u7q"]
+[ext_resource type="ArrayMesh" uid="uid://cdtkc83jytni7" path="res://Assets/Backgrounds/Forest/Tree2.obj" id="9_nqs2n"]
+[ext_resource type="ArrayMesh" uid="uid://bqon77l168dbt" path="res://Assets/Backgrounds/Forest/Tree3.obj" id="10_5f185"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ju8yh"]
+albedo_color = Color(0, 0.278431, 0.00392157, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3xfxx"]
+albedo_color = Color(0.501961, 0.32549, 0, 1)
+
+[node name="Main" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0520926, -3.8147e-06, -0.0107403)
+
+[node name="RoomsManager" type="Node3D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("1_k1gpb")
+
+[node name="Forest" type="Node3D" parent="RoomsManager"]
+script = ExtResource("2_rltx2")
+enemy_list = Array[Resource("res://Resources/Classes/EnemyCharacterResource.gd")]([ExtResource("3_20eaq")])
+
+[node name="CharactersMarker" type="Marker3D" parent="RoomsManager/Forest"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -0.506704, 0)
+gizmo_extents = 217.2
+
+[node name="EnemyMarker" type="Marker3D" parent="RoomsManager/Forest"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -0.506704, 0)
+
+[node name="EnemyCharacterManager" type="Node" parent="RoomsManager/Forest"]
+script = ExtResource("5_p8as4")
+
+[node name="Background" type="Node3D" parent="RoomsManager/Forest"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.30628)
+
+[node name="Path" type="MeshInstance3D" parent="RoomsManager/Forest/Background"]
+transform = Transform3D(-6.55671e-08, 0, 1.5, 0, 1.5, 0, -1.5, 0, -6.55671e-08, 0, -0.521, -5)
+mesh = ExtResource("5_kvmal")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_ju8yh")
+surface_material_override/1 = SubResource("StandardMaterial3D_3xfxx")
+
+[node name="ForestSprite" type="Sprite3D" parent="RoomsManager/Forest/Background"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.969181, -12.4225)
+texture = ExtResource("4_sf2ru")
+
+[node name="Trees" type="Node3D" parent="RoomsManager/Forest/Background"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RoomsManager/Forest/Background/Trees"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.879763, -0.496304, -7.00979)
+mesh = ExtResource("7_iydtp")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("8_t8u7q")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="RoomsManager/Forest/Background/Trees"]
+transform = Transform3D(0.618894, 0, 0, 0, 0.618894, 0, 0, 0, 0.618894, -1.75108, -0.566889, -5.40496)
+mesh = ExtResource("7_iydtp")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("8_t8u7q")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="RoomsManager/Forest/Background/Trees"]
+transform = Transform3D(0.241553, 0, -0.379674, 0, 0.45, 0, 0.379674, 0, 0.241553, 3.27853, -0.209913, -6.82418)
+mesh = ExtResource("7_iydtp")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("8_t8u7q")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="RoomsManager/Forest/Background/Trees"]
+transform = Transform3D(0.444789, 0, 0.0682847, 0, 0.45, 0, -0.0682847, 0, 0.444789, 3.7544, -0.209913, -6.82418)
+mesh = ExtResource("7_iydtp")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("8_t8u7q")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="RoomsManager/Forest/Background/Trees"]
+transform = Transform3D(0.589727, 0, -0.110556, 0, 0.6, 0, 0.110556, 0, 0.589727, 1.3435, -0.209913, -5.82664)
+mesh = ExtResource("7_iydtp")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("8_t8u7q")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="RoomsManager/Forest/Background/Trees"]
+transform = Transform3D(0.0971514, 0, -0.490471, 0, 0.5, 0, 0.490471, 0, 0.0971514, 0.653527, -0.630339, -8.10942)
+mesh = ExtResource("9_nqs2n")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("8_t8u7q")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="RoomsManager/Forest/Background/Trees"]
+transform = Transform3D(0.445828, 0, -0.673241, 0, 0.807475, 0, 0.673241, 0, 0.445828, 5.34793, -0.600665, -10.7847)
+mesh = ExtResource("9_nqs2n")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("8_t8u7q")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="RoomsManager/Forest/Background/Trees"]
+transform = Transform3D(-0.405165, 0, -0.698468, 0, 0.807475, 0, 0.698468, 0, -0.405165, -2.20471, -0.600665, -7.39294)
+mesh = ExtResource("9_nqs2n")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("8_t8u7q")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="RoomsManager/Forest/Background/Trees"]
+transform = Transform3D(-0.405165, 0, -0.698468, 0, 0.807475, 0, 0.698468, 0, -0.405165, -1.59192, -0.600665, -8.37174)
+mesh = ExtResource("10_5f185")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("8_t8u7q")
+
+[node name="PlayerCharacterManager" type="Node" parent="."]
+script = ExtResource("6_bcidc")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.984808, 0.173648, 0, -0.173648, 0.984808, 0, 1, 5)
+fov = 25.0
+size = 0.496
+script = ExtResource("7_gilvl")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.853396, -0.0199647, 0.52088, -0.512384, 0.151516, 0.845284, -0.0957976, -0.988253, 0.119074, 0, 0, 0)
+light_energy = 2.0
+light_indirect_energy = 1.5
